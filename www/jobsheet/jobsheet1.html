@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobsheet 1: Hukum Ohm — Virtual Lab</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="jobsheet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+    <nav class="navbar no-print">
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="home" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../menu/menu.html" class="nav-link"><i data-feather="grid"></i> Menu</a></li>
+        <li><a href="../materi/materi.html" class="nav-link"><i data-feather="book"></i> Materi</a></li>
+        <li><a href="jobsheet.html" class="nav-link active"><i data-feather="file-text"></i> Jobsheet</a></li>
+        <li><a href="../kalkulator/kalkulator.html" class="nav-link"><i data-feather="sliders"></i> Kalkulator Resistor</a></li>
+        <li><a href="../simulasi/simulasi.html" class="nav-link"><i data-feather="zap"></i> Simulasi</a></li>
+        <li><a href="../tutorial/tutorial.html" class="nav-link"><i data-feather="book-open"></i> Tutorial</a></li>
+        <li><a href="../tentang/tentang.html" class="nav-link"><i data-feather="info"></i> Tentang</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="page-container">
+      <div class="no-print" style="margin-bottom: 15px">
+        <a href="jobsheet.html" class="cyan-link"
+          ><i data-feather="arrow-left" style="width: 16px"></i> Kembali ke
+          Daftar Jobsheet</a
+        >
+      </div>
+      <div class="jobsheet-header">
+        <div class="jobsheet-title-wrap">
+          <h2>JOBSHEET 1</h2>
+          <h1>Hukum Ohm & Rangkaian Seri</h1>
+        </div>
+        <div class="student-info">
+          <div class="input-group">
+            <label>Nama / Kelompok:</label
+            ><input type="text" placeholder="Masukkan Nama..." />
+          </div>
+          <div class="input-group">
+            <label>NIM / Kelas:</label
+            ><input type="text" placeholder="Masukkan NIM..." />
+          </div>
+          <div class="input-group">
+            <label>Tanggal Praktikum:</label><input type="date" id="docDate" />
+          </div>
+        </div>
+      </div>
+
+      <section class="job-section">
+        <h3 class="section-title">
+          <i data-feather="target"></i> A. Tujuan Praktikum
+        </h3>
+        <ol class="obj-list">
+          <li>
+            Mahasiswa dapat merangkai komponen listrik dasar (Baterai &
+            Resistor) pada Simulator.
+          </li>
+          <li>
+            Mahasiswa dapat membuktikan berlakunya
+            <strong>Hukum Ohm ($I = V/R$)</strong> melalui tabel simulasi
+            pengujian arus total ($I_s$).
+          </li>
+        </ol>
+      </section>
+
+      <section class="job-section instruction-section">
+        <h3 class="section-title">
+          <i data-feather="tool"></i> B. Prosedur Kerja
+        </h3>
+
+        <!-- Skema Diagram -->
+        <svg
+          viewBox="0 0 400 200"
+          style="
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin: 15px auto;
+            display: block;
+          "
+        >
+          <polyline
+            points="100,110 100,150 300,150 300,50 220,50"
+            stroke="var(--cyan)"
+            stroke-width="2"
+            fill="none"
+            stroke-linejoin="round"
+          />
+          <polyline
+            points="180,50 100,50 100,90"
+            stroke="var(--cyan)"
+            stroke-width="2"
+            fill="none"
+            stroke-linejoin="round"
+          />
+          <line
+            x1="85"
+            y1="90"
+            x2="115"
+            y2="90"
+            stroke="var(--white)"
+            stroke-width="2"
+          />
+          <line
+            x1="92"
+            y1="110"
+            x2="108"
+            y2="110"
+            stroke="var(--white)"
+            stroke-width="4"
+          />
+          <text
+            x="75"
+            y="105"
+            fill="var(--white)"
+            font-size="14"
+            font-family="Outfit"
+            text-anchor="end"
+          >
+            12V
+          </text>
+          <text
+            x="125"
+            y="95"
+            fill="var(--white)"
+            font-size="12"
+            font-weight="bold"
+          >
+            +
+          </text>
+          <rect
+            x="180"
+            y="42"
+            width="40"
+            height="16"
+            fill="var(--bg)"
+            stroke="var(--orange)"
+            stroke-width="2"
+            rx="2"
+          />
+          <text
+            x="200"
+            y="32"
+            fill="var(--orange)"
+            font-size="14"
+            font-family="Outfit"
+            text-anchor="middle"
+          >
+            R
+          </text>
+          <path
+            d="M 130 40 L 160 40 L 155 35 M 160 40 L 155 45"
+            stroke="var(--cyan)"
+            stroke-width="2"
+            fill="none"
+          />
+          <text
+            x="145"
+            y="25"
+            fill="var(--cyan)"
+            font-size="14"
+            font-family="Outfit"
+            text-anchor="middle"
+          >
+            Arus (I)
+          </text>
+        </svg>
+        <div
+          class="diagram-hint"
+          style="
+            text-align: center;
+            display: block;
+            padding: 8px;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #888;
+          "
+        >
+          Contoh Rangkaian Tunggal Jobsheet 1
+        </div>
+
+        <ol class="step-list">
+          <li>
+            Buka halaman
+            <a
+              href="../simulasi/simulasi.html"
+              target="_blank"
+              class="cyan-link"
+              >Simulasi</a
+            >
+            di tab baru.
+          </li>
+          <li>
+            Tarik 1 buah Baterai (atur <strong>12 Volt</strong>) dan 1 buah
+            Resistor ke *workspace*. Sambungkan secara seri.
+          </li>
+          <li>Ubah nilai Resistor ($R$) sesuai tabel di bawah.</li>
+          <li>
+            Bawa <strong>Amperemeter</strong> ke atas kabel untuk mengukur arus
+            ($I$). Catat nilai dan Evaluasi!
+          </li>
+        </ol>
+      </section>
+
+      <section class="job-section">
+        <h3 class="section-title">
+          <i data-feather="edit-3"></i> C. Tabel Pengamatan Data
+        </h3>
+        <div class="table-responsive">
+          <table class="data-table" id="table-job1">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Sumber Teg ($V$)</th>
+                <th>Hambatan ($R$)</th>
+                <th>Arus Simulasi ($I$) (A)</th>
+                <th>Perhitungan Res ($V / I$)</th>
+                <th>Status Hukum Ohm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>12 V</td>
+                <td><span class="badge-res">2 &Omega;</span></td>
+                <td>
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="measure-input j1-i"
+                    data-v="12"
+                    data-r="2"
+                    placeholder="..."
+                  />
+                </td>
+                <td class="calc-cell">-</td>
+                <td class="status-cell">-</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>12 V</td>
+                <td><span class="badge-res">4 &Omega;</span></td>
+                <td>
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="measure-input j1-i"
+                    data-v="12"
+                    data-r="4"
+                    placeholder="..."
+                  />
+                </td>
+                <td class="calc-cell">-</td>
+                <td class="status-cell">-</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>12 V</td>
+                <td><span class="badge-res">6 &Omega;</span></td>
+                <td>
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="measure-input j1-i"
+                    data-v="12"
+                    data-r="6"
+                    placeholder="..."
+                  />
+                </td>
+                <td class="calc-cell">-</td>
+                <td class="status-cell">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="eval-banner" id="evalResult" style="display: none"></div>
+
+        <div class="action-bar no-print" style="margin-top: 20px">
+          <button id="btnEvaluate" class="btn-primary">
+            <i data-feather="check-circle"></i> Evaluasi Data
+          </button>
+          <button id="btnPrint" class="btn-secondary">
+            <i data-feather="printer"></i> Cetak PDF Laporan
+          </button>
+        </div>
+      </section>
+
+      <section class="job-section">
+        <h3 class="section-title">
+          <i data-feather="message-square"></i> D. Kesimpulan Analisa
+        </h3>
+        <textarea
+          class="conclusion-box"
+          rows="4"
+          placeholder="Tuliskan kesimpulan Anda mengenai karakteristik rangkaian seri dan hukum Ohm..."
+        ></textarea>
+      </section>
+
+      <section class="job-section">
+        <h3 class="section-title">
+          <i data-feather="camera"></i> E. Bukti Hasil Simulasi
+        </h3>
+        <div id="labPhoto" class="lab-photo-container">
+          <div class="empty-photo">
+            <i data-feather="image"></i>
+            <p>Belum ada foto yang disinkronisasi.</p>
+            <p style="font-size: 0.85rem; color: #888">
+              Gunakan tombol gantung <strong>Foto Simulasi</strong> di ruang
+              Simulator untuk menyematkan lampiran secara otomatis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+    <footer class="footer no-print">&copy; 2026 Virtual Lab Elektro</footer>
+
+    <script src="../components/navbar.js"></script>
+    <script src="jobsheet1.js"></script>
+    <script>
+      feather.replace();
+      document.getElementById("docDate").valueAsDate = new Date();
+
+    // Auto-load screenshot gallery
+    function renderGallery() {
+        const labPhotoDiv = document.getElementById("labPhoto");
+        if (!labPhotoDiv) return;
+        
+        let snaps = [];
+        try {
+            const stored = localStorage.getItem("vlab_screenshots");
+            if (stored) snaps = JSON.parse(stored);
+        } catch(e) {}
+        
+        if (snaps.length === 0) {
+            const oldSnap = localStorage.getItem("vlab_screenshot");
+            if (oldSnap) {
+                snaps.push(oldSnap);
+                localStorage.setItem("vlab_screenshots", JSON.stringify(snaps));
+            }
+        }
+        
+        if (snaps.length > 0) {
+            labPhotoDiv.style.border = "none";
+            labPhotoDiv.style.background = "transparent";
+            
+            let html = '<div class="gallery-grid">';
+            snaps.forEach((snap, idx) => {
+                html += `
+                  <div class="gallery-item">
+                    <img src="${snap}" alt="Bukti Simulasi ${idx+1}" />
+                    <button class="btn-delete-snap no-print" data-idx="${idx}" title="Hapus foto"><i data-feather="trash-2" style="width:16px;"></i></button>
+                  </div>
+                `;
+            });
+            html += '</div>';
+            labPhotoDiv.innerHTML = html;
+            if (typeof feather !== "undefined") feather.replace();
+            
+            const deleteBtns = labPhotoDiv.querySelectorAll('.btn-delete-snap');
+            deleteBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    snaps.splice(idx, 1);
+                    localStorage.setItem("vlab_screenshots", JSON.stringify(snaps));
+                    if(snaps.length === 0) {
+                        localStorage.removeItem("vlab_screenshot");
+                        location.reload();
+                    } else {
+                        renderGallery();
+                    }
+                });
+            });
+        }
+    }
+    renderGallery();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangkaian Paralel — Virtual Lab Listrik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="materi-ohm.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <nav class="navbar">
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="home" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="../menu/menu.html" class="nav-link"
+            ><i data-feather="grid"></i> Menu</a
+          >
+        </li>
+        <li>
+          <a href="materi.html" class="nav-link"
+            ><i data-feather="book"></i> Materi</a
+          >
+        </li>
+        <li>
+          <a href="../jobsheet/jobsheet.html" class="nav-link"
+            ><i data-feather="file-text"></i> Jobsheet</a
+          >
+        </li>
+        <li>
+          <a href="../kalkulator/kalkulator.html" class="nav-link"
+            ><i data-feather="sliders"></i> Kalkulator Resistor</a
+          >
+        </li>
+        <li>
+          <a href="../simulasi/simulasi.html" class="nav-link"
+            ><i data-feather="zap"></i> Simulasi</a
+          >
+        </li>
+        <li>
+          <a href="../tutorial/tutorial.html" class="nav-link"
+            ><i data-feather="book-open"></i> Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="../tentang/tentang.html" class="nav-link"
+            ><i data-feather="info"></i> Tentang</a
+          >
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="main">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="materi.html" class="bc-link"
+          ><i data-feather="book"></i> Materi</a
+        >
+        <i data-feather="chevron-right" class="bc-sep"></i>
+        <span class="bc-active">Rangkaian Paralel</span>
+      </div>
+
+      <!-- Header -->
+      <div class="detail-header">
+        <div class="detail-icon green-icon-header">
+          <i data-feather="git-branch"></i>
+        </div>
+        <div>
+          <div class="detail-number">Topik 03</div>
+          <h1 class="detail-title">
+            Rangkaian <span class="green">Paralel</span>
+          </h1>
+          <span class="level level-medium">Menengah</span>
+        </div>
+      </div>
+
+      <!-- 1. Pengertian -->
+      <div class="section-card" style="--sd: 0.1s">
+        <div class="section-title">
+          <i data-feather="align-left"></i> Pengertian
+        </div>
+        <p>
+          <strong>Rangkaian paralel</strong> adalah rangkaian listrik dimana
+          komponen-komponen disusun secara <strong>bercabang</strong> — setiap
+          komponen memiliki jalur sendiri yang terhubung langsung ke sumber
+          tegangan.
+        </p>
+        <p style="margin-top: 10px">
+          Tegangan pada setiap cabang <strong>sama besar</strong>, sedangkan
+          arus listrik <em>terbagi</em> ke setiap cabang. Jika satu cabang
+          putus, cabang lain <strong>tetap menyala</strong>.
+        </p>
+      </div>
+
+      <!-- 2. Diagram -->
+      <div class="section-card" style="--sd: 0.15s">
+        <div class="section-title">
+          <i data-feather="layout"></i> Diagram Rangkaian
+        </div>
+        <div class="diagram-wrapper">
+          <svg
+            id="diagram-paralel"
+            viewBox="0 0 340 160"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- ── JALUR UTAMA ── -->
+            <!-- Atas -->
+            <line
+              x1="40"
+              y1="20"
+              x2="300"
+              y2="20"
+              stroke="#00d4ff"
+              stroke-width="2"
+            />
+            <!-- Bawah -->
+            <line
+              x1="40"
+              y1="140"
+              x2="300"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="2"
+            />
+            <!-- Kiri naik/turun (baterai) -->
+            <line
+              x1="40"
+              y1="20"
+              x2="40"
+              y2="50"
+              stroke="#00d4ff"
+              stroke-width="2"
+            />
+            <line
+              x1="40"
+              y1="110"
+              x2="40"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="2"
+            />
+            <!-- Kanan -->
+            <line
+              x1="300"
+              y1="20"
+              x2="300"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="2"
+            />
+
+            <!-- ── SIMBOL BATERAI ── -->
+            <line
+              x1="30"
+              y1="50"
+              x2="50"
+              y2="50"
+              stroke="#00ff88"
+              stroke-width="3"
+            />
+            <text
+              x="55"
+              y="54"
+              font-family="Outfit"
+              font-size="7"
+              fill="#00ff88"
+              font-weight="900"
+            >
+              +
+            </text>
+            <line
+              x1="34"
+              y1="62"
+              x2="46"
+              y2="62"
+              stroke="#00ff88"
+              stroke-width="1.5"
+            />
+            <text
+              x="55"
+              y="66"
+              font-family="Outfit"
+              font-size="7"
+              fill="#00ff88"
+            >
+              -
+            </text>
+            <line
+              x1="30"
+              y1="74"
+              x2="50"
+              y2="74"
+              stroke="#00ff88"
+              stroke-width="3"
+            />
+            <line
+              x1="34"
+              y1="86"
+              x2="46"
+              y2="86"
+              stroke="#00ff88"
+              stroke-width="1.5"
+            />
+            <line
+              x1="30"
+              y1="98"
+              x2="50"
+              y2="98"
+              stroke="#00ff88"
+              stroke-width="3"
+            />
+            <line
+              x1="34"
+              y1="110"
+              x2="46"
+              y2="110"
+              stroke="#00ff88"
+              stroke-width="1.5"
+            />
+            <text
+              x="40"
+              y="155"
+              text-anchor="middle"
+              font-family="Outfit"
+              font-size="8"
+              fill="#00ff88"
+              font-weight="700"
+            >
+              Vs
+            </text>
+
+            <!-- ── CABANG R1 ── -->
+            <line
+              x1="120"
+              y1="20"
+              x2="120"
+              y2="42"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <line
+              x1="120"
+              y1="98"
+              x2="120"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <rect
+              x="104"
+              y="42"
+              width="32"
+              height="56"
+              rx="3"
+              fill="#0d1e35"
+              stroke="#ff6a00"
+              stroke-width="1.5"
+            />
+            <text
+              x="120"
+              y="74"
+              text-anchor="middle"
+              font-family="Outfit"
+              font-size="9"
+              font-weight="700"
+              fill="#ff6a00"
+            >
+              R1
+            </text>
+
+            <!-- ── CABANG R2 ── -->
+            <line
+              x1="180"
+              y1="20"
+              x2="180"
+              y2="42"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <line
+              x1="180"
+              y1="98"
+              x2="180"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <rect
+              x="164"
+              y="42"
+              width="32"
+              height="56"
+              rx="3"
+              fill="#0d1e35"
+              stroke="#ff6a00"
+              stroke-width="1.5"
+            />
+            <text
+              x="180"
+              y="74"
+              text-anchor="middle"
+              font-family="Outfit"
+              font-size="9"
+              font-weight="700"
+              fill="#ff6a00"
+            >
+              R2
+            </text>
+
+            <!-- ── CABANG R3 ── -->
+            <line
+              x1="240"
+              y1="20"
+              x2="240"
+              y2="42"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <line
+              x1="240"
+              y1="98"
+              x2="240"
+              y2="140"
+              stroke="#00d4ff"
+              stroke-width="1.5"
+            />
+            <rect
+              x="224"
+              y="42"
+              width="32"
+              height="56"
+              rx="3"
+              fill="#0d1e35"
+              stroke="#ff6a00"
+              stroke-width="1.5"
+            />
+            <text
+              x="240"
+              y="74"
+              text-anchor="middle"
+              font-family="Outfit"
+              font-size="9"
+              font-weight="700"
+              fill="#ff6a00"
+            >
+              R3
+            </text>
+
+            <!-- ── PANAH ARUS CABANG ── -->
+            <polygon points="114,24 120,34 126,24" fill="#00d4ff" stroke="#fff" stroke-width="0.5" opacity="1"/>
+            <polygon points="174,24 180,34 186,24" fill="#00d4ff" stroke="#fff" stroke-width="0.5" opacity="1"/>
+            <polygon points="234,24 240,34 246,24" fill="#00d4ff" stroke="#fff" stroke-width="0.5" opacity="1"/>
+
+            <!-- ── ELEKTRON ── -->
+            <!-- Cabang R1 -->
+            <circle class="elek-p1" r="3.5" fill="#00d4ff" opacity="0.9">
+              <animate
+                attributeName="opacity"
+                values="0.9;0.4;0.9"
+                dur="0.8s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <!-- Cabang R2 -->
+            <circle class="elek-p2" r="3.5" fill="#00ff88" opacity="0.9">
+              <animate
+                attributeName="opacity"
+                values="0.4;0.9;0.4"
+                dur="0.8s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <!-- Cabang R3 -->
+            <circle class="elek-p3" r="3.5" fill="#00d4ff" opacity="0.9">
+              <animate
+                attributeName="opacity"
+                values="0.9;0.4;0.9"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <!-- Jalur utama atas -->
+            <circle class="elek-main" r="3.5" fill="#00ff88" opacity="0.7">
+              <animate
+                attributeName="opacity"
+                values="0.7;0.3;0.7"
+                dur="1.2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </svg>
+        </div>
+        <p
+          style="
+            font-size: 0.72rem;
+            color: var(--dim);
+            text-align: center;
+            margin-top: 8px;
+          "
+        >
+          ⚡ Arus terbagi ke setiap cabang R1, R2, R3 secara bersamaan
+        </p>
+      </div>
+
+      <!-- 3. Sifat -->
+      <div class="section-card" style="--sd: 0.2s">
+        <div class="section-title">
+          <i data-feather="list"></i> Sifat Rangkaian Paralel
+        </div>
+        <div class="sifat-list">
+          <div class="sifat-item">
+            <div class="sifat-icon cyan-icon">
+              <i data-feather="activity"></i>
+            </div>
+            <div>
+              <div class="sifat-title">Tegangan Sama</div>
+              <div class="sifat-desc">
+                Tegangan pada setiap cabang bernilai sama
+              </div>
+              <div class="sifat-rumus cyan-glow">V<sub>A</sub> = V<sub>B</sub> = V<sub>C</sub> = ...</div>
+            </div>
+          </div>
+          <div class="sifat-item">
+            <div class="sifat-icon orange-icon"><i data-feather="zap"></i></div>
+            <div>
+              <div class="sifat-title">Arus Terbagi</div>
+              <div class="sifat-desc">Arus total = jumlah arus tiap cabang</div>
+              <div class="sifat-rumus orange-glow">It = I1 + I2 + I3</div>
+            </div>
+          </div>
+          <div class="sifat-item">
+            <div class="sifat-icon green-icon">
+              <i data-feather="trending-down"></i>
+            </div>
+            <div>
+              <div class="sifat-title">Hambatan Mengecil</div>
+              <div class="sifat-desc">
+                Hambatan total lebih kecil dari hambatan terkecil
+              </div>
+              <div class="sifat-rumus green-glow">
+                1/Rt = 1/R1 + 1/R2 + 1/R3
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Konsep Pembagi Arus Baru -->
+      <div class="section-card" style="--sd: 0.25s; border-color: rgba(255, 106, 0, 0.4); background: rgba(255, 106, 0, 0.02);">
+        <div class="section-title" style="color: var(--orange)">
+          <i data-feather="git-branch" style="stroke: var(--orange)"></i> Prinsip Pembagi Arus
+        </div>
+        <p>
+          Karena arus listrik memecah masuk ke berbagai cabang alternatif yang ditawarkan, struktur paralel ini melambangkan sistem <strong>Pembagi Arus (Current Divider)</strong>. Karena tegangan di tiap ujung (simpul A, B, C) selalu bernilai ekuivalen alias sama rata, maka arus bebas untuk memecah dari sumbernya berdasar rintangan.
+        </p>
+        <p style="margin-top: 10px; border-left: 2px solid #ff6a00; padding-left: 8px; font-size: 0.85rem; color: #ff6a00;">
+          <em>"Semakin kecil hambatan (jalan yang mudah/lapang), semakin besar porsi arus listrik yang akan melaju lewat sana."</em>
+        </p>
+      </div>
+
+      <!-- 4. Rumus -->
+      <div class="section-card" style="--sd: 0.3s">
+        <div class="section-title"><i data-feather="code"></i> Rumus</div>
+        <div class="rumus-grid">
+          <div class="rumus-box rumus-main">
+            <div class="rumus-label">Hambatan Total</div>
+            <div class="rumus-formula green-glow">
+              <span class="frac"><span class="frac-num">1</span><span class="frac-den">Rt</span></span> = <span class="frac"><span class="frac-num">1</span><span class="frac-den">R1</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">R2</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">R3</span></span>
+            </div>
+          </div>
+          <div class="rumus-box">
+            <div class="rumus-label">Arus Total</div>
+            <div class="rumus-formula orange-glow">It = I1 + I2 + I3</div>
+          </div>
+          <div class="rumus-box">
+            <div class="rumus-label">Arus Tiap Cabang</div>
+            <div class="rumus-formula cyan-glow">In = <span class="frac"><span class="frac-num">Vs</span><span class="frac-den">Rn</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Contoh Soal -->
+      <div class="section-card" style="--sd: 0.4s">
+        <div class="section-title">
+          <i data-feather="edit-3"></i> Contoh Soal
+        </div>
+        <div class="soal-box">
+          <div class="soal-nomor">Soal 1</div>
+          <p class="soal-text">
+            Tiga resistor <strong>R1 = 6 Ω</strong>, <strong>R2 = 12 Ω</strong>,
+            dan <strong>R3 = 4 Ω</strong> dirangkai paralel dengan sumber
+            tegangan <strong>12 V</strong>. Hitunglah hambatan total dan arus
+            total!
+          </p>
+        </div>
+        <div class="jawaban-box">
+          <div class="jawaban-title">Diketahui:</div>
+          <div class="jawaban-step">
+            R1 = 6 Ω &nbsp;|&nbsp; R2 = 12 Ω &nbsp;|&nbsp; R3 = 4 Ω
+            &nbsp;|&nbsp; Vs = 12 V
+          </div>
+          <div class="jawaban-title" style="margin-top: 8px">Penyelesaian:</div>
+          <div class="jawaban-step"><span class="frac"><span class="frac-num">1</span><span class="frac-den">Rt</span></span> = <span class="frac"><span class="frac-num">1</span><span class="frac-den">6</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">12</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">4</span></span></div>
+          <div class="jawaban-step"><span class="frac"><span class="frac-num">1</span><span class="frac-den">Rt</span></span> = <span class="frac"><span class="frac-num">2</span><span class="frac-den">12</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">12</span></span> + <span class="frac"><span class="frac-num">3</span><span class="frac-den">12</span></span> = <span class="frac"><span class="frac-num">6</span><span class="frac-den">12</span></span></div>
+          <div class="jawaban-step">
+            Rt = <span class="frac"><span class="frac-num">12</span><span class="frac-den">6</span></span> = <span style="color: #00ff88">2 Ω</span>
+          </div>
+          <div class="jawaban-step" style="margin-top: 6px">It = <span class="frac"><span class="frac-num">Vs</span><span class="frac-den">Rt</span></span></div>
+          <div class="jawaban-step">It = <span class="frac"><span class="frac-num">12</span><span class="frac-den">2</span></span></div>
+          <div class="jawaban-result">
+            It = <span class="cyan">6 Ampere</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Kesimpulan -->
+      <div class="section-card kesimpulan-card" style="--sd: 0.5s">
+        <div class="section-title">
+          <i data-feather="check-circle"></i> Kesimpulan
+        </div>
+        <ul class="kesimpulan-list">
+          <li>Komponen tersusun dalam jalur <strong>bercabang</strong></li>
+          <li>Tegangan di setiap cabang <strong>sama besar</strong></li>
+          <li>Arus total = <strong>jumlah arus</strong> tiap cabang</li>
+          <li>
+            Hambatan total <strong>lebih kecil</strong> dari hambatan terkecil
+          </li>
+          <li>
+            Jika satu cabang putus, cabang lain <strong>tetap menyala</strong>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigasi bawah -->
+      <div class="nav-bottom">
+        <a href="materi-seri.html" class="btn-nav btn-prev">
+          <i data-feather="arrow-left"></i> Rangkaian Seri
+        </a>
+        <a href="materi-campuran.html" class="btn-nav btn-next">
+          Rangkaian Campuran <i data-feather="arrow-right"></i>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2025 Virtual Lab Elektro &nbsp;|&nbsp; Teknik Elektro
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../components/navbar.js"></script>
+    <script src="materi.js"></script>
+  </body>
+</html>

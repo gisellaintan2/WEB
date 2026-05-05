@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Utama — Virtual Lab Listrik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <!-- Logo kiri (klik = Home) -->
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="home" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+
+      <!-- Link desktop -->
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="menu.html" class="nav-link"
+            ><i data-feather="grid"></i> Menu</a
+          >
+        </li>
+        <li>
+          <a href="../materi/materi.html" class="nav-link"
+            ><i data-feather="book"></i> Materi</a
+          >
+        </li>
+        <li>
+          <a href="../jobsheet/jobsheet.html" class="nav-link"
+            ><i data-feather="file-text"></i> Jobsheet</a
+          >
+        </li>
+        <li>
+          <a href="../kalkulator/kalkulator.html" class="nav-link"
+            ><i data-feather="sliders"></i> Kalkulator Resistor</a
+          >
+        </li>
+        <li>
+          <a href="../simulasi/simulasi.html" class="nav-link"
+            ><i data-feather="zap"></i> Simulasi</a
+          >
+        </li>
+        <li>
+          <a href="../tutorial/tutorial.html" class="nav-link"
+            ><i data-feather="book-open"></i> Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="../tentang/tentang.html" class="nav-link"
+            ><i data-feather="info"></i> Tentang</a
+          >
+        </li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- KONTEN -->
+    <main class="main">
+      <div class="welcome">
+        <h2 class="welcome-title">Pilih <span class="cyan">Menu</span></h2>
+        <p class="welcome-sub">Mulai perjalanan belajarmu dari sini</p>
+      </div>
+
+      <div class="menu-grid">
+        <a href="../materi/materi.html" class="menu-card">
+          <div class="card-glow glow-cyan"></div>
+          <div class="card-icon"><i data-feather="book"></i></div>
+          <div class="card-content">
+            <div class="card-title">Materi</div>
+            <div class="card-desc">Rangkaian Listrik Dasar</div>
+            <div class="card-detail">Seri · Paralel · Campuran · Hukum Ohm</div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="../jobsheet/jobsheet.html" class="menu-card">
+          <div class="card-glow glow-orange"></div>
+          <div class="card-icon"><i data-feather="file-text"></i></div>
+          <div class="card-content">
+            <div class="card-title">Jobsheet</div>
+            <div class="card-desc">Lembar Kerja Praktikum</div>
+            <div class="card-detail">Panduan · Langkah Kerja · Tabel Data</div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="../kalkulator/kalkulator.html" class="menu-card card-featured">
+          <div class="card-glow glow-orange"></div>
+          <div class="card-icon"><i data-feather="sliders"></i></div>
+          <div class="card-content">
+            <div class="card-title">Kalkulator Resistor</div>
+            <div class="card-desc">Pembaca Kode Warna</div>
+            <div class="card-detail">4-Gelang · Cepat & Akurat</div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="../simulasi/simulasi.html" class="menu-card card-featured">
+          <div class="card-glow glow-cyan"></div>
+          <div class="card-icon"><i data-feather="zap"></i></div>
+          <div class="card-content">
+            <div class="card-title">Simulasi</div>
+            <div class="card-desc">Rangkaian Interaktif</div>
+            <div class="card-detail">
+              Hitung Otomatis · Visualisasi · Animasi Arus
+            </div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="../tutorial/tutorial.html" class="menu-card">
+          <div class="card-glow glow-green"></div>
+          <div class="card-icon"><i data-feather="book-open"></i></div>
+          <div class="card-content">
+            <div class="card-title">Cara Penggunaan</div>
+            <div class="card-desc">Tutorial Aplikasi</div>
+            <div class="card-detail">Panduan Lengkap · Step by Step</div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="../tentang/tentang.html" class="menu-card">
+          <div class="card-glow glow-orange"></div>
+          <div class="card-icon"><i data-feather="info"></i></div>
+          <div class="card-content">
+            <div class="card-title">Tentang Web Ini</div>
+            <div class="card-desc">Informasi Aplikasi</div>
+            <div class="card-detail">Pengembang · Versi · Teknologi</div>
+          </div>
+          <i data-feather="arrow-right" class="card-arrow"></i>
+          <div class="card-line"></div>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2025 Virtual Lab Elektro &nbsp;|&nbsp; Teknik Elektro
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../components/navbar.js"></script>
+    <script src="menu.js"></script>
+  </body>
+</html>

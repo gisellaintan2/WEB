@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Jobsheet — Virtual Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../components/navbar.css" />
+  <link rel="stylesheet" href="../menu/menu.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <i data-feather="home" class="nav-logo-icon"></i>
+      <div>
+        <div class="nav-logo-title">VIRTUAL LAB</div>
+        <div class="nav-logo-sub">Rangkaian Listrik</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../menu/menu.html" class="nav-link"><i data-feather="grid"></i> Menu</a></li>
+      <li><a href="../materi/materi.html" class="nav-link"><i data-feather="book"></i> Materi</a></li>
+      <li><a href="jobsheet.html" class="nav-link active"><i data-feather="file-text"></i> Jobsheet</a></li>
+      <li><a href="../kalkulator/kalkulator.html" class="nav-link"><i data-feather="sliders"></i> Kalkulator Resistor</a></li>
+      <li><a href="../simulasi/simulasi.html" class="nav-link"><i data-feather="zap"></i> Simulasi</a></li>
+      <li><a href="../tutorial/tutorial.html" class="nav-link"><i data-feather="book-open"></i> Tutorial</a></li>
+      <li><a href="../tentang/tentang.html" class="nav-link"><i data-feather="info"></i> Tentang</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- HUB KONTEN -->
+  <main class="menu-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(0,212,255,0.1); border:1px solid rgba(0,212,255,0.3); color:var(--cyan); padding:6px 15px; border-radius:20px; font-size:0.9rem; font-weight:600; margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">
+           <i data-feather="book-open" style="width:16px;"></i> Direktori Eksperimen
+        </div>
+        <h1 style="font-family:'Outfit', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; background: linear-gradient(to right, #00d4ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);">
+            DAFTAR JOBSHEET
+        </h1>
+        <p style="color: var(--dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+            Pilih modul *Lembar Kerja Praktikum* interaktif di bawah ini untuk memulai pengamatan, pencatatan data, dan menguji kemampuan berhitung teknik Elektro Anda secara digital.
+        </p>
+    </div>
+    
+    <div class="menu-grid" style="gap: 2rem;">
+        <a href="jobsheet1.html" class="menu-card">
+          <div class="card-glow glow-cyan"></div>
+          <div class="card-icon"><i data-feather="zap"></i></div>
+          <div class="card-content">
+            <div class="card-title">Jobsheet 1</div>
+            <div class="card-desc">Hukum Ohm & Rangkaian Seri</div>
+          </div>
+        </a>
+
+        <a href="jobsheet2.html" class="menu-card">
+          <div class="card-glow glow-green"></div>
+          <div class="card-icon"><i data-feather="git-merge"></i></div>
+          <div class="card-content">
+            <div class="card-title">Jobsheet 2</div>
+            <div class="card-desc">Paralel & Hukum Kirchhoff I (KCL)</div>
+          </div>
+        </a>
+
+        <a href="jobsheet3.html" class="menu-card">
+          <div class="card-glow glow-orange"></div>
+          <div class="card-icon"><i data-feather="scissors"></i></div>
+          <div class="card-content">
+            <div class="card-title">Jobsheet 3</div>
+            <div class="card-desc">Voltage Divider & Kirchhoff II (KVL)</div>
+          </div>
+        </a>
+
+        <a href="jobsheet4.html" class="menu-card">
+          <div class="card-glow glow-red"></div>
+          <div class="card-icon"><i data-feather="cpu"></i></div>
+          <div class="card-content">
+            <div class="card-title">Jobsheet 4</div>
+            <div class="card-desc">Analisis Kompleks (Campuran Seri-Paralel)</div>
+          </div>
+        </a>
+    </div>
+  </main>
+  
+  <footer class="footer no-print">
+    &copy; 2026 Virtual Lab Elektro &nbsp;&middot;&nbsp; Pendidikan Teknik Elektro
+  </footer>
+
+  <script src="../components/navbar.js"></script>
+  <script>feather.replace();</script>
+</body>
+</html>

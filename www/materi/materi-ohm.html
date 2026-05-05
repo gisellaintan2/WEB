@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hukum Ohm — Virtual Lab Listrik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="materi-ohm.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="home" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="../menu/menu.html" class="nav-link"
+            ><i data-feather="grid"></i> Menu</a
+          >
+        </li>
+        <li>
+          <a href="materi.html" class="nav-link"
+            ><i data-feather="book"></i> Materi</a
+          >
+        </li>
+        <li>
+          <a href="../jobsheet/jobsheet.html" class="nav-link"
+            ><i data-feather="file-text"></i> Jobsheet</a
+          >
+        </li>
+        <li>
+          <a href="../kalkulator/kalkulator.html" class="nav-link"
+            ><i data-feather="sliders"></i> Kalkulator Resistor</a
+          >
+        </li>
+        <li>
+          <a href="../simulasi/simulasi.html" class="nav-link"
+            ><i data-feather="zap"></i> Simulasi</a
+          >
+        </li>
+        <li>
+          <a href="../tutorial/tutorial.html" class="nav-link"
+            ><i data-feather="book-open"></i> Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="../tentang/tentang.html" class="nav-link"
+            ><i data-feather="info"></i> Tentang</a
+          >
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="main">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="materi.html" class="bc-link"
+          ><i data-feather="book"></i> Materi</a
+        >
+        <i data-feather="chevron-right" class="bc-sep"></i>
+        <span class="bc-active">Hukum Ohm</span>
+      </div>
+
+      <!-- Header -->
+      <div class="detail-header">
+        <div class="detail-icon cyan-icon"><i data-feather="activity"></i></div>
+        <div>
+          <div class="detail-number">Topik 01</div>
+          <h1 class="detail-title">Hukum <span class="cyan">Ohm</span></h1>
+          <span class="level level-easy">Dasar</span>
+        </div>
+      </div>
+
+      <!-- 1. Pengertian -->
+      <div class="section-card" style="--sd: 0.1s">
+        <div class="section-title">
+          <i data-feather="align-left"></i> Pengertian
+        </div>
+        <p>
+          <strong>Hukum Ohm</strong> adalah hukum dasar dalam rangkaian listrik
+          yang menyatakan bahwa besar <strong>arus listrik (I)</strong> yang
+          mengalir melalui suatu penghantar berbanding lurus dengan
+          <strong>tegangan (V)</strong> yang diberikan, dan berbanding terbalik
+          dengan <strong>hambatan (R)</strong>
+          penghantar tersebut.
+        </p>
+        <p style="margin-top: 10px">
+          Hukum ini dikemukakan oleh ilmuwan Jerman bernama
+          <em>Georg Simon Ohm</em> pada tahun 1827.
+        </p>
+      </div>
+
+      <!-- 2. Rumus -->
+      <div class="section-card" style="--sd: 0.2s">
+        <div class="section-title"><i data-feather="code"></i> Rumus</div>
+        <div class="segitiga-wrapper">
+          <!-- Segitiga 1: Cari V -->
+          <div class="segitiga-item">
+            <svg
+              viewBox="0 0 120 110"
+              width="120"
+              height="110"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <clipPath id="clipV">
+                  <polygon points="60,4 4,106 116,106" />
+                </clipPath>
+              </defs>
+              <polygon points="60,4 4,106 116,106" fill="#0d1e35" />
+              <line
+                x1="4"
+                y1="62"
+                x2="116"
+                y2="62"
+                stroke="#00d4ff"
+                stroke-width="1.5"
+                clip-path="url(#clipV)"
+              />
+              <line
+                x1="60"
+                y1="62"
+                x2="60"
+                y2="106"
+                stroke="#00d4ff"
+                stroke-width="1.5"
+                clip-path="url(#clipV)"
+              />
+              <polygon
+                points="60,4 4,106 116,106"
+                fill="none"
+                stroke="#00d4ff"
+                stroke-width="2.5"
+              />
+              <circle
+                cx="60"
+                cy="36"
+                r="13"
+                fill="#0a1525"
+                stroke="#00d4ff"
+                stroke-width="2"
+              />
+              <text
+                x="60"
+                y="42"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="14"
+                font-weight="900"
+                fill="#00d4ff"
+              >
+                V
+              </text>
+              <text
+                x="33"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#ff6a00"
+              >
+                I
+              </text>
+              <text
+                x="87"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#00ff88"
+              >
+                R
+              </text>
+            </svg>
+            <div class="segitiga-formula">
+              <span
+                class="seg-circle"
+                style="border-color: #00d4ff; color: #00d4ff"
+                >V</span
+              >
+              <span class="seg-eq">= I × R</span>
+            </div>
+            <div
+              class="segitiga-label"
+              style="border-color: rgba(0, 212, 255, 0.3); color: #00d4ff"
+            >
+              Mencari Tegangan
+            </div>
+          </div>
+
+          <!-- Segitiga 2: Cari I -->
+          <div class="segitiga-item">
+            <svg
+              viewBox="0 0 120 110"
+              width="120"
+              height="110"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <clipPath id="clipI">
+                  <polygon points="60,4 4,106 116,106" />
+                </clipPath>
+              </defs>
+              <polygon points="60,4 4,106 116,106" fill="#0d1e35" />
+              <line
+                x1="4"
+                y1="62"
+                x2="116"
+                y2="62"
+                stroke="#ff6a00"
+                stroke-width="1.5"
+                clip-path="url(#clipI)"
+              />
+              <line
+                x1="60"
+                y1="62"
+                x2="60"
+                y2="106"
+                stroke="#ff6a00"
+                stroke-width="1.5"
+                clip-path="url(#clipI)"
+              />
+              <polygon
+                points="60,4 4,106 116,106"
+                fill="none"
+                stroke="#ff6a00"
+                stroke-width="2.5"
+              />
+              <text
+                x="60"
+                y="42"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#00d4ff"
+              >
+                V
+              </text>
+              <circle
+                cx="33"
+                cy="84"
+                r="13"
+                fill="#0a1525"
+                stroke="#ff6a00"
+                stroke-width="2"
+              />
+              <text
+                x="33"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#ff6a00"
+              >
+                I
+              </text>
+              <text
+                x="87"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#00ff88"
+              >
+                R
+              </text>
+            </svg>
+            <div class="segitiga-formula">
+              <span
+                class="seg-circle"
+                style="border-color: #ff6a00; color: #ff6a00"
+                >I</span
+              >
+              <span class="seg-eq">= <span class="frac"><span class="frac-num">V</span><span class="frac-den">R</span></span></span>
+            </div>
+            <div
+              class="segitiga-label"
+              style="border-color: rgba(255, 106, 0, 0.3); color: #ff6a00"
+            >
+              Mencari Arus
+            </div>
+          </div>
+
+          <!-- Segitiga 3: Cari R -->
+          <div class="segitiga-item">
+            <svg
+              viewBox="0 0 120 110"
+              width="120"
+              height="110"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <clipPath id="clipR">
+                  <polygon points="60,4 4,106 116,106" />
+                </clipPath>
+              </defs>
+              <polygon points="60,4 4,106 116,106" fill="#0d1e35" />
+              <line
+                x1="4"
+                y1="62"
+                x2="116"
+                y2="62"
+                stroke="#00ff88"
+                stroke-width="1.5"
+                clip-path="url(#clipR)"
+              />
+              <line
+                x1="60"
+                y1="62"
+                x2="60"
+                y2="106"
+                stroke="#00ff88"
+                stroke-width="1.5"
+                clip-path="url(#clipR)"
+              />
+              <polygon
+                points="60,4 4,106 116,106"
+                fill="none"
+                stroke="#00ff88"
+                stroke-width="2.5"
+              />
+              <text
+                x="60"
+                y="42"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#00d4ff"
+              >
+                V
+              </text>
+              <text
+                x="33"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#ff6a00"
+              >
+                I
+              </text>
+              <circle
+                cx="87"
+                cy="84"
+                r="13"
+                fill="#0a1525"
+                stroke="#00ff88"
+                stroke-width="2"
+              />
+              <text
+                x="87"
+                y="90"
+                text-anchor="middle"
+                font-family="Outfit"
+                font-size="13"
+                font-weight="900"
+                fill="#00ff88"
+              >
+                R
+              </text>
+            </svg>
+            <div class="segitiga-formula">
+              <span
+                class="seg-circle"
+                style="border-color: #00ff88; color: #00ff88"
+                >R</span
+              >
+              <span class="seg-eq">= <span class="frac"><span class="frac-num">V</span><span class="frac-den">I</span></span></span>
+            </div>
+            <div
+              class="segitiga-label"
+              style="border-color: rgba(0, 255, 136, 0.3); color: #00ff88"
+            >
+              Mencari Hambatan
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Keterangan Simbol -->
+      <div class="section-card" style="--sd: 0.3s">
+        <div class="section-title">
+          <i data-feather="list"></i> Keterangan Simbol
+        </div>
+        <div class="simbol-list">
+          <div class="simbol-item">
+            <span class="simbol-key cyan-text">V</span>
+            <span class="simbol-eq">=</span>
+            <span class="simbol-val"
+              >Tegangan listrik &nbsp;<em>(Satuan: Volt / V)</em></span
+            >
+          </div>
+          <div class="simbol-item">
+            <span class="simbol-key orange-text">I</span>
+            <span class="simbol-eq">=</span>
+            <span class="simbol-val"
+              >Kuat arus listrik &nbsp;<em>(Satuan: Ampere / A)</em></span
+            >
+          </div>
+          <div class="simbol-item">
+            <span class="simbol-key green-text">R</span>
+            <span class="simbol-eq">=</span>
+            <span class="simbol-val"
+              >Hambatan listrik &nbsp;<em>(Satuan: Ohm / Ω)</em></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Contoh Soal -->
+      <div class="section-card" style="--sd: 0.4s">
+        <div class="section-title">
+          <i data-feather="edit-3"></i> Contoh Soal
+        </div>
+        <div class="soal-box">
+          <div class="soal-nomor">Soal 1</div>
+          <p class="soal-text">
+            Sebuah resistor memiliki hambatan <strong>10 Ω</strong> dihubungkan
+            dengan sumber tegangan <strong>20 V</strong>. Berapakah arus yang
+            mengalir?
+          </p>
+        </div>
+        <div class="jawaban-box">
+          <div class="jawaban-title">Diketahui:</div>
+          <div class="jawaban-step">R = 10 Ω &nbsp;|&nbsp; V = 20 V</div>
+          <div class="jawaban-title" style="margin-top: 8px">Penyelesaian:</div>
+          <div class="jawaban-step">I = <span class="frac"><span class="frac-num">V</span><span class="frac-den">R</span></span></div>
+          <div class="jawaban-step">I = <span class="frac"><span class="frac-num">20</span><span class="frac-den">10</span></span></div>
+          <div class="jawaban-result">
+            I = <span class="cyan">2 Ampere</span>
+          </div>
+        </div>
+
+        <div class="soal-box" style="margin-top: 16px">
+          <div class="soal-nomor">Soal 2</div>
+          <p class="soal-text">
+            Arus sebesar <strong>4 A</strong> mengalir melalui resistor
+            <strong>5 Ω</strong>. Berapakah tegangan pada resistor?
+          </p>
+        </div>
+        <div class="jawaban-box">
+          <div class="jawaban-title">Diketahui:</div>
+          <div class="jawaban-step">I = 4 A &nbsp;|&nbsp; R = 5 Ω</div>
+          <div class="jawaban-title" style="margin-top: 8px">Penyelesaian:</div>
+          <div class="jawaban-step">V = I × R</div>
+          <div class="jawaban-step">V = 4 × 5</div>
+          <div class="jawaban-result">
+            V = <span class="cyan">20 Volt</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Kesimpulan -->
+      <div class="section-card kesimpulan-card" style="--sd: 0.5s">
+        <div class="section-title">
+          <i data-feather="check-circle"></i> Kesimpulan
+        </div>
+        <ul class="kesimpulan-list">
+          <li>Tegangan berbanding <strong>lurus</strong> dengan arus</li>
+          <li>Hambatan berbanding <strong>terbalik</strong> dengan arus</li>
+          <li>Satuan hambatan adalah <strong>Ohm (Ω)</strong></li>
+          <li>Hukum Ohm berlaku pada <strong>suhu konstan</strong></li>
+        </ul>
+      </div>
+
+      <!-- Navigasi bawah -->
+      <div class="nav-bottom">
+        <a href="materi.html" class="btn-nav btn-prev">
+          <i data-feather="arrow-left"></i> Daftar Materi
+        </a>
+        <a href="materi-seri.html" class="btn-nav btn-next">
+          Rangkaian Seri <i data-feather="arrow-right"></i>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2025 Virtual Lab Elektro &nbsp;|&nbsp; Teknik Elektro
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../components/navbar.js"></script>
+    <script src="materi.js"></script>
+  </body>
+</html>

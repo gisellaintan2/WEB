@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════
+   JOBSHEET MODULE CSS
+═══════════════════════════════════════ */
+:root {
+  --bg: #050a12;
+  --surface: #0a1525;
+  --border: #1a3050;
+  --cyan: #00d4ff;
+  --orange: #ff6a00;
+  --green: #00ff88;
+  --red: #ff4757;
+  --text: #c8dff0;
+  --dim: #3a5570;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.particles {
+  position: fixed; inset: 0; z-index: -1;
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyan { color: var(--cyan); }
+.orange { color: var(--orange); }
+
+.page-container {
+  max-width: 900px; margin: 100px auto 50px; padding: 0 20px; flex: 1;
+}
+
+.jobsheet-header {
+  border-bottom: 2px solid var(--border); padding-bottom: 2rem; margin-bottom: 1.5rem;
+  display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;
+}
+
+.jobsheet-title-wrap h2 {
+  font-family: 'Outfit', sans-serif; color: var(--orange); font-size: 1.1rem;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;
+}
+.jobsheet-title-wrap h1 {
+  font-family: 'Outfit', sans-serif; color: var(--white); font-size: 2.2rem;
+  font-weight: 700; text-shadow: 0 0 15px rgba(0,212,255,0.3);
+}
+
+.student-info { display: flex; flex-direction: column; gap: 10px; min-width: 250px; }
+.input-group label { display: block; font-size: 0.85rem; color: var(--cyan); margin-bottom: 4px; font-weight: 600;}
+.input-group input {
+  width: 100%; padding: 8px 12px; background: rgba(10, 21, 37, 0.8);
+  border: 1px solid var(--border); color: #fff; border-radius: 6px; font-family: inherit; transition: all 0.3s;
+}
+.input-group input:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 10px rgba(0,212,255,0.2); }
+
+/* --- JOB TABS --- */
+.job-tabs {
+  display: flex; gap: 10px; margin-bottom: 2rem; border-bottom: 1px solid var(--border);
+  padding-bottom: 10px; overflow-x: auto;
+}
+.tab-btn {
+  background: transparent; color: var(--text); border: 1px solid transparent; 
+  padding: 10px 15px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;
+  white-space: nowrap; font-family: 'Outfit', sans-serif; font-size: 1rem;
+}
+.tab-btn:hover { background: rgba(0,212,255,0.05); color: var(--white); }
+.tab-btn.active {
+  background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0,212,255,0.2);
+}
+
+.job-pane { display: none; }
+.job-pane.active { display: block; animation: fade-in 0.4s ease forwards; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-title-print { display: none; font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 20px; font-weight:bold;}
+
+/* --- SECTIONS --- */
+.job-section {
+  background: rgba(10, 21, 37, 0.6); backdrop-filter: blur(10px);
+  border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;
+}
+
+.section-title {
+  display: flex; align-items: center; gap: 10px; color: var(--cyan);
+  font-family: 'Outfit', sans-serif; font-size: 1.3rem; margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(0,212,255,0.2); padding-bottom: 10px;
+}
+
+.obj-list, .step-list { padding-left: 20px; }
+.obj-list li, .step-list li { margin-bottom: 8px; }
+
+.cyan-link { color: var(--cyan); text-decoration: none; font-weight: 600; transition: 0.2s;}
+.cyan-link:hover { text-shadow: 0 0 8px var(--cyan); text-decoration:underline; }
+
+.badge-res { background: #111; border: 1px solid #c8a165; color: #f1c40f; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-weight: bold;}
+
+.diagram-hint {
+  margin-top: 1.5rem; padding: 1rem; background: rgba(255, 106, 0, 0.1);
+  border-left: 3px solid var(--orange); font-size: 0.9rem; display: flex; gap: 10px; align-items: flex-start;
+}
+.diagram-hint svg { color: var(--orange); flex-shrink: 0; margin-top:2px; }
+
+/* --- DATA TABLE --- */
+.table-responsive { overflow-x: auto; margin-bottom: 1.5rem; }
+.data-table { width: 100%; border-collapse: collapse; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; }
+.data-table th { background: rgba(0,212,255,0.1); color: var(--cyan); font-weight: 600; padding: 10px; border: 1px solid var(--border); font-size:0.9rem;}
+.data-table td { padding: 10px; border: 1px solid var(--border); vertical-align: middle; font-size:0.95rem; }
+.data-table tr:hover { background: rgba(255,255,255,0.02); }
+
+.measure-input {
+  width: 75px; text-align: center; background: #000; border: 1px solid var(--cyan);
+  color: #fff; padding: 6px; border-radius: 4px; font-family: monospace; font-size: 1.1rem;
+}
+.measure-input:focus { outline: none; box-shadow: 0 0 10px rgba(0,212,255,0.5); }
+.measure-input.err { border-color: var(--red); color: var(--red); box-shadow: 0 0 10px rgba(255,71,87,0.3); }
+.measure-input.ok { border-color: var(--green); color: var(--green); }
+
+.status-cell { font-weight: bold; }
+.status-cell.ok { color: var(--green); }
+.status-cell.err { color: var(--red); }
+.calc-cell { font-family: monospace; color: var(--dim); }
+
+.action-bar { display: flex; gap: 1rem; justify-content: flex-end; }
+.eval-banner { margin-top: 20px; padding: 15px; border-radius: 8px; font-weight: 600; text-align: center; }
+.eval-banner.success { background: rgba(0, 255, 136, 0.1); border: 1px solid var(--green); color: var(--green); }
+.eval-banner.error { background: rgba(255, 71, 87, 0.1); border: 1px solid var(--red); color: var(--red); }
+
+/* --- CONCLUSION BOX --- */
+.conclusion-box {
+  width: 100%; background: #0a1525; border: 1px solid var(--border); border-radius: 8px;
+  color: #fff; padding: 15px; font-family: inherit; font-size: 1rem; line-height: 1.5; resize: vertical;
+}
+.conclusion-box:focus { outline: none; border-color: var(--cyan); }
+
+/* --- FOOTER --- */
+.footer { text-align: center; padding: 20px; color: var(--dim); font-size: 0.9rem; border-top: 1px solid var(--border); background: var(--bg); margin-top: auto; }
+
+/* ===============================================================
+   PRINT MEDIA QUERY
+=============================================================== */
+@media print {
+  body { background: #fff !important; color: #000 !important; font-family: "Times New Roman", serif; }
+  .particles, .no-print { display: none !important; }
+  
+  .page-container { margin: 0; padding: 0; max-width: 100%; border: none;}
+  .jobsheet-header { border-bottom: 2px solid #000; margin-bottom: 1.5rem; padding-bottom: 10px;}
+  .jobsheet-title-wrap h2 { color: #555; }
+  .jobsheet-title-wrap h1 { color: #000; text-shadow: none; font-size: 2rem;}
+  
+  .pane-title-print { display: block !important; margin-bottom: 10px; font-weight: bold; }
+  .job-pane:not(.active) { display: none !important; } /* Only print active tab! */
+  
+  .input-group input { background: transparent; border: none; border-bottom: 1px dotted #000; color: #000; border-radius: 0; padding-left:0;}
+  
+  .job-section { background: transparent; border: none; padding: 0; margin-bottom: 1.5rem;}
+  .section-title { color: #000; border-bottom: 1px solid #000; }
+  
+  .data-table th, .data-table td { border: 1px solid #000; background: transparent; color: #000;}
+  .measure-input { border: none !important; background: transparent; color: #000 !important; box-shadow: none !important;}
+  .badge-res { border:none; color:#000; background:transparent;}
+  .conclusion-box { border: 1px solid #000; background: transparent; color: #000; }
+  
+  .status-cell.ok, .measure-input.ok { color: #000 !important; }
+  .status-cell.err, .measure-input.err { color: #000 !important; font-weight: bold; text-decoration: underline;}
+  
+  .lab-photo-container { border: 1px solid #000; min-height: 50px; background: none; margin-top: 10px; }
+  .lab-photo-container img { box-shadow: none; border: 1px solid #000; }
+  .empty-photo { display: none !important; } /* Sembunyikan tulisan kosong saat diprint jika belum ada foto */
+}
+
+/* ==========================================================
+   LAB PHOTO SYNCHRONIZATION CONTAINER
+========================================================== */
+.lab-photo-container {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex; justify-content: center; align-items: center;
+  background: rgba(0,0,0,0.2);
+  margin-top: 15px; padding: 10px;
+  text-align: center; color: var(--dim);
+}
+.lab-photo-container img {
+  max-width: 100%; height: auto; 
+  border-radius: 4px; border: 1px solid var(--border);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.empty-photo i {
+  width: 40px; height: 40px; stroke-width: 1; margin-bottom: 10px; color: var(--dim);
+}
+
+/* --- SCREENSHOT GALLERY --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.gallery-item .btn-delete-snap {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 71, 87, 0.9);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+}
+.gallery-item:hover .btn-delete-snap {
+  opacity: 1;
+}
+.gallery-item .btn-delete-snap:hover {
+  background: var(--red);
+  transform: scale(1.1);
+}
+@media print {
+  .btn-delete-snap { display: none !important; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}

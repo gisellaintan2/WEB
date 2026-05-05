@@ -1,0 +1,229 @@
+/* ═══════════════════════════════════════
+   NAVBAR.CSS — Semua halaman
+═══════════════════════════════════════ */
+:root {
+  --bg: #050a12;
+  --panel: #0a1525;
+  --border: #1a3050;
+  --cyan: #00d4ff;
+  --orange: #ff6a00;
+  --text: #c8dff0;
+  --dim: #3a5570;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(5, 10, 18, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+/* ── LOGO (klik = Home) ── */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.nav-logo-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--cyan);
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
+
+.nav-logo-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 2px;
+}
+
+.nav-logo-sub {
+  font-size: 0.62rem;
+  color: var(--dim);
+  letter-spacing: 1px;
+}
+
+/* ── NAV LINKS (desktop) ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition:
+    color 0.3s,
+    border-color 0.3s,
+    background 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  color: var(--cyan);
+  border-color: var(--border);
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.nav-link.active {
+  color: var(--cyan);
+  border-color: rgba(0, 212, 255, 0.3);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+  flex-shrink: 0;
+}
+
+.hamburger:hover {
+  border-color: var(--cyan);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 2px;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+  transform-origin: center;
+}
+
+/* Animasi X saat terbuka */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── OVERLAY ── */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 150;
+  backdrop-filter: blur(2px);
+}
+.nav-overlay.show {
+  display: block;
+}
+
+/* ── DIVIDER di hamburger ── */
+.nav-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+  list-style: none;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLET & MOBILE (≤ 900px)
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  /* Sembunyikan nav links, jadikan sidebar */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100vh;
+    background: #0a1525;
+    border-left: 1px solid var(--border);
+    padding: 70px 16px 30px;
+    z-index: 200;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+
+  /* Slide masuk saat open */
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 11px 14px;
+    border-radius: 10px;
+  }
+
+  /* Tampilkan hamburger */
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — DESKTOP (> 900px)
+═══════════════════════════════════════ */
+@media (min-width: 901px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-divider {
+    display: none;
+  }
+}

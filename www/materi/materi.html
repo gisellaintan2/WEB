@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi — Virtual Lab Listrik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="materi.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="../index.html" class="btn-back-home" title="Home"
+        ><i data-feather="home"></i
+      ></a>
+      <div class="nav-logo">
+        <i data-feather="zap" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="../menu/menu.html" class="nav-link"
+            ><i data-feather="grid"></i> Menu</a
+          >
+        </li>
+        <li>
+          <a href="materi.html" class="nav-link"
+            ><i data-feather="book"></i> Materi</a
+          >
+        </li>
+        <li>
+          <a href="../jobsheet/jobsheet.html" class="nav-link"
+            ><i data-feather="file-text"></i> Jobsheet</a
+          >
+        </li>
+        <li>
+          <a href="../kalkulator/kalkulator.html" class="nav-link"
+            ><i data-feather="sliders"></i> Kalkulator Resistor</a
+          >
+        </li>
+        <li>
+          <a href="../simulasi/simulasi.html" class="nav-link"
+            ><i data-feather="zap"></i> Simulasi</a
+          >
+        </li>
+        <li>
+          <a href="../tutorial/tutorial.html" class="nav-link"
+            ><i data-feather="book-open"></i> Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="../tentang/tentang.html" class="nav-link"
+            ><i data-feather="info"></i> Tentang</a
+          >
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <i data-feather="menu" id="icon-menu"></i>
+        <i data-feather="x" id="icon-close" style="display: none"></i>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- KONTEN -->
+    <main class="main">
+      <!-- Header -->
+      <div class="page-header">
+        <div class="page-header-icon"><i data-feather="book"></i></div>
+        <div>
+          <h1 class="page-title">
+            Materi <span class="cyan">Pembelajaran</span>
+          </h1>
+          <p class="page-sub">Pilih sub materi untuk mulai belajar</p>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="info-box">
+        <i data-feather="info" class="info-icon"></i>
+        <p>
+          Disarankan belajar <strong>berurutan</strong> dari topik pertama agar
+          pemahaman lebih baik.
+        </p>
+      </div>
+
+      <!-- Daftar Sub Materi -->
+      <div class="topik-list">
+        <a href="materi-ohm.html" class="topik-card">
+          <div class="topik-number">01</div>
+          <div class="topik-icon cyan-icon">
+            <i data-feather="activity"></i>
+          </div>
+          <div class="topik-content">
+            <div class="topik-title">Hukum Ohm</div>
+            <div class="topik-desc">Hubungan tegangan, arus, dan hambatan</div>
+            <div class="topik-tags">
+              <span class="tag">V = I × R</span>
+              <span class="tag">Tegangan</span>
+              <span class="tag">Arus</span>
+            </div>
+          </div>
+          <div class="topik-meta">
+            <i data-feather="chevron-right" class="topik-arrow"></i>
+          </div>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="materi-seri.html" class="topik-card">
+          <div class="topik-number">02</div>
+          <div class="topik-icon orange-icon">
+            <i data-feather="share-2"></i>
+          </div>
+          <div class="topik-content">
+            <div class="topik-title">Rangkaian Seri</div>
+            <div class="topik-desc">Komponen tersusun dalam satu jalur</div>
+            <div class="topik-tags">
+              <span class="tag">R total</span>
+              <span class="tag">Arus sama</span>
+              <span class="tag">Tegangan bagi</span>
+            </div>
+          </div>
+          <div class="topik-meta">
+            <i data-feather="chevron-right" class="topik-arrow"></i>
+          </div>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="materi-paralel.html" class="topik-card">
+          <div class="topik-number">03</div>
+          <div class="topik-icon green-icon">
+            <i data-feather="git-branch"></i>
+          </div>
+          <div class="topik-content">
+            <div class="topik-title">Rangkaian Paralel</div>
+            <div class="topik-desc">
+              Komponen tersusun dalam jalur bercabang
+            </div>
+            <div class="topik-tags">
+              <span class="tag">1/R total</span>
+              <span class="tag">Tegangan sama</span>
+              <span class="tag">Arus bagi</span>
+            </div>
+          </div>
+          <div class="topik-meta">
+            <i data-feather="chevron-right" class="topik-arrow"></i>
+          </div>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="materi-campuran.html" class="topik-card">
+          <div class="topik-number">04</div>
+          <div class="topik-icon cyan-icon"><i data-feather="cpu"></i></div>
+          <div class="topik-content">
+            <div class="topik-title">Rangkaian Campuran</div>
+            <div class="topik-desc">Kombinasi rangkaian seri dan paralel</div>
+            <div class="topik-tags">
+              <span class="tag">Seri + Paralel</span>
+              <span class="tag">Analisis</span>
+              <span class="tag">Penyederhanaan</span>
+            </div>
+          </div>
+          <div class="topik-meta">
+            <i data-feather="chevron-right" class="topik-arrow"></i>
+          </div>
+          <div class="card-line"></div>
+        </a>
+
+        <a href="materi-kirchhoff.html" class="topik-card">
+          <div class="topik-number">05</div>
+          <div class="topik-icon orange-icon">
+            <i data-feather="git-merge"></i>
+          </div>
+          <div class="topik-content">
+            <div class="topik-title">Hukum Kirchhoff</div>
+            <div class="topik-desc">Hukum tegangan (KVL) dan arus (KCL)</div>
+            <div class="topik-tags">
+              <span class="tag">KVL</span>
+              <span class="tag">KCL</span>
+              <span class="tag">Loop</span>
+              <span class="tag">Node</span>
+            </div>
+          </div>
+          <div class="topik-meta">
+            <i data-feather="chevron-right" class="topik-arrow"></i>
+          </div>
+          <div class="card-line"></div>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2025 Virtual Lab Elektro &nbsp;|&nbsp; Teknik Elektro
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../components/navbar.js"></script>
+    <script src="materi.js"></script>
+  </body>
+</html>

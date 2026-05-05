@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Resistor — Virtual Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="../materi/materi.css" />
+    <link rel="stylesheet" href="kalkulator.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR (7 Menu) -->
+    <nav class="navbar">
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="zap" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../menu/menu.html" class="nav-link"><i data-feather="grid"></i> Menu</a></li>
+        <li><a href="../materi/materi.html" class="nav-link"><i data-feather="book"></i> Materi</a></li>
+        <li><a href="../jobsheet/jobsheet.html" class="nav-link"><i data-feather="file-text"></i> Jobsheet</a></li>
+        <li><a href="kalkulator.html" class="nav-link"><i data-feather="sliders"></i> Kalkulator Resistor</a></li>
+        <li><a href="../simulasi/simulasi.html" class="nav-link"><i data-feather="zap"></i> Simulasi</a></li>
+        <li><a href="../tutorial/tutorial.html" class="nav-link"><i data-feather="book-open"></i> Tutorial</a></li>
+        <li><a href="../tentang/tentang.html" class="nav-link"><i data-feather="info"></i> Tentang</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <i data-feather="menu" id="icon-menu"></i>
+        <i data-feather="x" id="icon-close" style="display: none"></i>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- KONTEN -->
+    <main class="main">
+      <div class="page-header">
+        <div class="page-header-icon"><i data-feather="sliders"></i></div>
+        <div>
+          <h1 class="page-title">Kalkulator <span class="cyan">Kode Warna</span></h1>
+          <p class="page-sub">Terjemahkan pita warna resistor 4-gelang menjadi nominal Ohm</p>
+        </div>
+      </div>
+
+      <div class="kalkulator-container">
+        <!-- Preview Section -->
+        <div class="kalkulator-preview">
+           <svg viewBox="0 0 100 40" width="100%" height="auto" style="max-width: 400px; display: block; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+              <rect x="15" y="5" width="70" height="30" rx="6" fill="#f0d5a3"/>
+              <rect id="calcB1" x="25" y="5" width="6" height="30" fill="#111"/>
+              <rect id="calcB2" x="40" y="5" width="6" height="30" fill="#8b4513"/>
+              <rect id="calcB3" x="55" y="5" width="6" height="30" fill="#cc0000"/>
+              <rect id="calcB4" x="72" y="5" width="6" height="30" fill="#d4af37"/>
+              <rect x="0" y="18" width="15" height="4" fill="#999"/>
+              <rect x="85" y="18" width="15" height="4" fill="#999"/>
+           </svg>
+           <div id="calcResult" class="kalkulator-result">
+              1.2 kΩ ± 5%
+           </div>
+        </div>
+        
+        <!-- Controls Section -->
+        <div class="kalkulator-controls">
+           <div class="calc-row">
+              <label>Gelang 1 (Digit 1)</label>
+              <div class="color-grid" id="gridB1"></div>
+           </div>
+           <div class="calc-row">
+              <label>Gelang 2 (Digit 2)</label>
+              <div class="color-grid" id="gridB2"></div>
+           </div>
+           <div class="calc-row">
+              <label>Gelang 3 (Pengali)</label>
+              <div class="color-grid" id="gridB3"></div>
+           </div>
+           <div class="calc-row">
+              <label>Gelang 4 (Toleransi)</label>
+              <div class="color-grid" id="gridB4"></div>
+           </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>feather.replace();</script>
+    <script src="../components/navbar.js"></script>
+    <script src="kalkulator.js"></script>
+  </body>
+</html>

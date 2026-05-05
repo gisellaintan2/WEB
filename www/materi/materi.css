@@ -1,0 +1,443 @@
+/* ═══════════════════════════════════════
+   MATERI.CSS
+═══════════════════════════════════════ */
+:root {
+  --bg: #050a12;
+  --panel: #0a1525;
+  --border: #1a3050;
+  --cyan: #00d4ff;
+  --orange: #ff6a00;
+  --green: #00ff88;
+  --text: #c8dff0;
+  --dim: #3a5570;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+.cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 16px var(--cyan);
+}
+
+/* ── MAIN ── */
+.main {
+  position: relative;
+  z-index: 10;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.page-header-icon svg {
+  width: 34px;
+  height: 34px;
+  stroke: var(--cyan);
+  filter: drop-shadow(0 0 10px var(--cyan));
+}
+
+.page-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.page-sub {
+  font-size: 0.8rem;
+  color: var(--dim);
+  letter-spacing: 1px;
+}
+
+/* ── INFO BOX ── */
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(0, 212, 255, 0.04);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.5s ease 0.1s both;
+}
+
+.info-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.info-box p {
+  font-size: 0.83rem;
+  color: var(--dim);
+  line-height: 1.6;
+}
+.info-box strong {
+  color: var(--cyan);
+}
+
+/* ── TOPIK LIST ── */
+.topik-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── TOPIK CARD ── */
+.topik-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  transition:
+    transform 0.25s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+
+  /* animasi masuk */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+.topik-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.topik-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.topik-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.topik-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.topik-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.topik-card:hover {
+  transform: translateX(6px);
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
+}
+
+/* Nomor */
+.topik-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--border);
+  min-width: 32px;
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+.topik-card:hover .topik-number {
+  color: rgba(0, 212, 255, 0.2);
+}
+
+/* Ikon kotak */
+.topik-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.topik-card:hover .topik-icon {
+  transform: scale(1.1);
+}
+
+.cyan-icon {
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+.orange-icon {
+  background: rgba(255, 106, 0, 0.08);
+  border: 1px solid rgba(255, 106, 0, 0.2);
+}
+.green-icon {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.cyan-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--cyan);
+}
+.orange-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--orange);
+}
+.green-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--green);
+}
+
+/* Konten teks */
+.topik-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.topik-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e8f4ff;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.topik-desc {
+  font-size: 0.76rem;
+  color: var(--dim);
+  margin-bottom: 8px;
+}
+
+.topik-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--dim);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Meta kanan */
+.topik-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Level badge */
+.level {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.level-easy {
+  color: var(--green);
+  background: rgba(0, 255, 136, 0.07);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+.level-medium {
+  color: var(--cyan);
+  background: rgba(0, 212, 255, 0.07);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+.level-hard {
+  color: var(--orange);
+  background: rgba(255, 106, 0, 0.07);
+  border: 1px solid rgba(255, 106, 0, 0.2);
+}
+
+/* Panah chevron */
+.topik-arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--dim);
+  transition:
+    stroke 0.3s,
+    transform 0.3s;
+}
+.topik-card:hover .topik-arrow svg {
+  stroke: var(--cyan);
+  transform: translateX(3px);
+}
+
+/* Garis bawah animasi */
+.card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--cyan), transparent);
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+.topik-card:hover .card-line {
+  width: 100%;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--dim);
+  padding: 12px;
+  background: rgba(5, 10, 18, 0.92);
+  border-top: 1px solid var(--border);
+  z-index: 100;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE MOBILE (< 500px) ── */
+@media (max-width: 500px) {
+  .topik-number {
+    display: none;
+  }
+  .topik-tags {
+    display: none;
+  }
+  .main {
+    padding: 18px 12px 70px;
+  }
+  .page-title {
+    font-size: 1.1rem;
+  }
+  .topik-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ── RESPONSIVE TABLET (>= 768px) ── */
+@media (min-width: 768px) {
+  .main {
+    max-width: 680px;
+    padding: 32px 24px 80px;
+  }
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .topik-card {
+    padding: 18px 20px;
+  }
+  .topik-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* ── RESPONSIVE DESKTOP (>= 1024px) ── */
+@media (min-width: 1024px) {
+  .main {
+    max-width: 780px;
+  }
+  .page-title {
+    font-size: 1.7rem;
+  }
+  .topik-card {
+    padding: 20px 22px;
+  }
+}

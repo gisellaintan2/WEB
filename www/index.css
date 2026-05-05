@@ -1,0 +1,416 @@
+/* ═══════════════════════════════════════
+   VARIABEL
+═══════════════════════════════════════ */
+:root {
+  --bg: #050a12;
+  --panel: #0a1525;
+  --border: #1a3050;
+  --cyan: #00d4ff;
+  --orange: #ff6a00;
+  --green: #00ff88;
+  --text: #c8dff0;
+  --dim: #3a5570;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid PCB */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ PARTIKEL ═══ */
+.particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* ═══ SHARED ═══ */
+.cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 20px var(--cyan);
+}
+.orange {
+  color: var(--orange);
+  text-shadow: 0 0 20px var(--orange);
+}
+.highlight {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.section-label {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--dim);
+  margin-bottom: 28px;
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px 50px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: rgba(0, 212, 255, 0.05);
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 30px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+.hero-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  animation:
+    fadeUp 0.8s ease 0.2s both,
+    pulse 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px var(--cyan));
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px var(--cyan));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 28px var(--cyan));
+  }
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--dim);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 480px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+
+/* ═══ TOMBOL MULAI ═══ */
+.btn-mulai {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--cyan), #0090cc);
+  padding: 15px 52px;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.35);
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.btn-mulai::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.4s;
+}
+.btn-mulai:hover::before {
+  left: 150%;
+}
+.btn-mulai:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 45px rgba(0, 212, 255, 0.6);
+}
+.btn-mulai:active {
+  transform: translateY(0);
+}
+
+/* ═══ SECTION FITUR ═══ */
+.section-fitur {
+  position: relative;
+  z-index: 10;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px 50px;
+  animation: fadeUp 0.8s ease 0.7s both;
+}
+
+.fitur-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.fitur-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 16px;
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+  cursor: default;
+  overflow: hidden;
+}
+
+.fitur-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.1);
+}
+
+/* Kartu unggulan span 2 kolom */
+.fitur-featured {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-color: rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, #0a1525, #0d2035);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+.fitur-featured:hover {
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+}
+
+.fitur-featured .fitur-title {
+  font-size: 1.1rem;
+}
+.fitur-featured .fitur-desc {
+  font-size: 0.85rem;
+}
+
+.fitur-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.fitur-featured .fitur-icon {
+  margin-bottom: 0;
+  font-size: 2.4rem;
+  flex-shrink: 0;
+}
+
+.fitur-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e8f4ff;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.fitur-desc {
+  font-size: 0.78rem;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+.fitur-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* ═══ FOOTER ═══ */
+.footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--dim);
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ═══ ANIMASI ═══ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══ RESPONSIVE MOBILE (< 500px) ═══ */
+@media (max-width: 500px) {
+  .hero {
+    padding: 40px 16px 36px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .btn-mulai {
+    padding: 13px 36px;
+    font-size: 0.85rem;
+  }
+  .fitur-grid {
+    grid-template-columns: 1fr;
+  }
+  .fitur-featured {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section-fitur,
+  .section-about {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .about-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ═══ RESPONSIVE TABLET (≥ 768px) ═══ */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .hero {
+    padding: 70px 32px 55px;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+  .fitur-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .btn-mulai {
+    font-size: 1rem;
+    padding: 16px 60px;
+  }
+}
+
+/* ═══ RESPONSIVE DESKTOP (≥ 1024px) ═══ */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  .hero {
+    max-width: 720px;
+  }
+  .section-fitur,
+  .section-about {
+    max-width: 720px;
+  }
+  .fitur-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .fitur-featured {
+    grid-column: 1 / -1;
+  }
+  .btn-mulai {
+    font-size: 1.05rem;
+    padding: 17px 68px;
+  }
+}

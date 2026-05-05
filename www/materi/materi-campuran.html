@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangkaian Campuran — Virtual Lab Listrik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="materi-ohm.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="../index.html" class="nav-logo">
+        <i data-feather="home" class="nav-logo-icon"></i>
+        <div>
+          <div class="nav-logo-title">VIRTUAL LAB</div>
+          <div class="nav-logo-sub">Rangkaian Listrik</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="../menu/menu.html" class="nav-link"
+            ><i data-feather="grid"></i> Menu</a
+          >
+        </li>
+        <li>
+          <a href="materi.html" class="nav-link"
+            ><i data-feather="book"></i> Materi</a
+          >
+        </li>
+        <li>
+          <a href="../jobsheet/jobsheet.html" class="nav-link"
+            ><i data-feather="file-text"></i> Jobsheet</a
+          >
+        </li>
+        <li>
+          <a href="../kalkulator/kalkulator.html" class="nav-link"
+            ><i data-feather="sliders"></i> Kalkulator Resistor</a
+          >
+        </li>
+        <li>
+          <a href="../simulasi/simulasi.html" class="nav-link"
+            ><i data-feather="zap"></i> Simulasi</a
+          >
+        </li>
+        <li>
+          <a href="../tutorial/tutorial.html" class="nav-link"
+            ><i data-feather="book-open"></i> Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="../tentang/tentang.html" class="nav-link"
+            ><i data-feather="info"></i> Tentang</a
+          >
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="main">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="materi.html" class="bc-link"
+          ><i data-feather="book"></i> Materi</a
+        >
+        <i data-feather="chevron-right" class="bc-sep"></i>
+        <span class="bc-active">Rangkaian Campuran</span>
+      </div>
+
+      <!-- Header -->
+      <div class="detail-header">
+        <div class="detail-icon cyan-icon"><i data-feather="git-merge"></i></div>
+        <div>
+          <div class="detail-number">Topik 04</div>
+          <h1 class="detail-title">Rangkaian <span class="cyan">Campuran</span></h1>
+          <span class="level level-easy" style="background:#ff8c0022; color:#ff8c00; border-color:#ff8c00">Menengah</span>
+        </div>
+      </div>
+
+      <!-- 1. Pengertian -->
+      <div class="section-card" style="--sd: 0.1s">
+        <div class="section-title">
+          <i data-feather="align-left"></i> Pengertian
+        </div>
+        <p>
+          <strong>Rangkaian Campuran</strong> adalah gabungan dari <strong>Rangkaian Seri</strong> dan <strong>Rangkaian Paralel</strong> di dalam satu sirkuit tertutup. Rangkaian ini mengakomodasi karakteristik keduanya.
+        </p>
+        <p style="margin-top: 10px">
+          Sirkuit kompleks di dunia nyata (seperti pada motherboard komputer atau televisi) umumnya merupakan rangkaian campuran yang sangat besar. Penyelesaiannya dilakukan dengan menyederhanakan blok-blok paralel atau seri secara bertahap.
+        </p>
+      </div>
+
+      <!-- Diagram -->
+      <div class="section-card" style="--sd: 0.15s">
+        <div class="section-title">
+          <i data-feather="layout"></i> Diagram Campuran
+        </div>
+        <div class="diagram-wrapper">
+          <svg id="diagram-campuran" viewBox="0 0 340 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="25" x2="80" y2="25" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="120" y1="25" x2="180" y2="25" stroke="#00d4ff" stroke-width="2"/>
+            
+            <line x1="180" y1="25" x2="180" y2="10" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="180" y1="10" x2="220" y2="10" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="260" y1="10" x2="300" y2="10" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="300" y1="10" x2="300" y2="25" stroke="#00d4ff" stroke-width="2"/>
+            
+            <line x1="180" y1="25" x2="180" y2="40" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="180" y1="40" x2="220" y2="40" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="260" y1="40" x2="300" y2="40" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="300" y1="40" x2="300" y2="25" stroke="#00d4ff" stroke-width="2"/>
+            
+            <line x1="300" y1="25" x2="320" y2="25" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="320" y1="25" x2="320" y2="80" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="320" y1="80" x2="40" y2="80" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="40" y1="25" x2="40" y2="35" stroke="#00d4ff" stroke-width="2"/>
+            <line x1="40" y1="65" x2="40" y2="80" stroke="#00d4ff" stroke-width="2"/>
+
+            <line x1="30" y1="35" x2="50" y2="35" stroke="#00ff88" stroke-width="3"/>
+            <text x="52" y="39" font-family="Outfit" font-size="7" fill="#00ff88" font-weight="900">+</text>
+            <line x1="34" y1="45" x2="46" y2="45" stroke="#00ff88" stroke-width="1.5"/>
+            <text x="52" y="49" font-family="Outfit" font-size="7" fill="#00ff88">-</text>
+            <line x1="30" y1="55" x2="50" y2="55" stroke="#00ff88" stroke-width="3"/>
+            <line x1="34" y1="65" x2="46" y2="65" stroke="#00ff88" stroke-width="1.5"/>
+
+            <rect x="80" y="17" width="40" height="16" rx="3" fill="#0d1e35" stroke="#ff6a00" stroke-width="1.5"/>
+            <text x="100" y="29" text-anchor="middle" font-family="Outfit" font-size="8" font-weight="700" fill="#ff6a00">R1</text>
+            
+            <rect x="220" y="2" width="40" height="16" rx="3" fill="#0d1e35" stroke="#ff6a00" stroke-width="1.5"/>
+            <text x="240" y="14" text-anchor="middle" font-family="Outfit" font-size="8" font-weight="700" fill="#ff6a00">R2</text>
+            
+            <rect x="220" y="32" width="40" height="16" rx="3" fill="#0d1e35" stroke="#ff6a00" stroke-width="1.5"/>
+            <text x="240" y="44" text-anchor="middle" font-family="Outfit" font-size="8" font-weight="700" fill="#ff6a00">R3</text>
+
+            <circle cx="180" cy="25" r="3" fill="#ff4757"/>
+            <circle cx="300" cy="25" r="3" fill="#ff4757"/>
+            
+            <!-- Panah Arus Utama Masuk -->
+            <polygon points="135,19 143,25 135,31" fill="#00d4ff" opacity="0.8"/>
+            <!-- Panah Cabang 1 (Atas) -->
+            <polygon points="200,4 208,10 200,16" fill="#00d4ff" opacity="0.8"/>
+            <!-- Panah Cabang 2 (Bawah) -->
+            <polygon points="200,34 208,40 200,46" fill="#00d4ff" opacity="0.8"/>
+            <!-- Panah Kembali Arus Utama (Bawah) -->
+            <polygon points="160,74 152,80 160,86" fill="#00d4ff" opacity="0.8"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2. Strategi Penyelesaian -->
+      <div class="section-card" style="--sd: 0.2s">
+        <div class="section-title"><i data-feather="crosshair"></i> Strategi Penyelesaian</div>
+        <div style="background-color: rgba(0, 212, 255, 0.05); border-left: 4px solid #00d4ff; padding: 15px; border-radius: 4px;">
+           <ol style="margin-left: 20px; line-height: 1.6; color: #b0c4de;">
+               <li>Identifikasi bagian rangkaian yang murni seri atau murni paralel.</li>
+               <li>Sederhanakan bagian <strong>paralel terkecil</strong> atau <strong>seri terkecil</strong> terlebih dahulu menjadi satu hambatan pengganti (Rt).</li>
+               <li>Gambarkan ulang (secara imajiner atau di kertas) sirkuit yang telah disederhanakan.</li>
+               <li>Ulangi langkah tersebut hingga hanya tersisa satu lintasan seri total.</li>
+           </ol>
+        </div>
+      </div>
+
+      <!-- 3. Contoh Soal -->
+      <div class="section-card" style="--sd: 0.3s">
+        <div class="section-title">
+          <i data-feather="edit-3"></i> Contoh Kasus
+        </div>
+        <div class="soal-box">
+          <div class="soal-nomor">Analisis 1</div>
+          <p class="soal-text">
+            Sebuah sirkuit memiliki <strong>R1 = 4 Ω</strong> yang dirangkai secara seri dengan blok paralel <strong>(R2 = 6 Ω dan R3 = 3 Ω)</strong>. Berapakah hambatan total (Rt) sirkuit tersebut?
+          </p>
+        </div>
+        <div class="jawaban-box">
+          <div class="jawaban-title">Langkah 1: Sederhanakan Blok Paralel (Rp)</div>
+          <div class="jawaban-step"><span class="frac"><span class="frac-num">1</span><span class="frac-den">Rp</span></span> = <span class="frac"><span class="frac-num">1</span><span class="frac-den">R2</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">R3</span></span></div>
+          <div class="jawaban-step"><span class="frac"><span class="frac-num">1</span><span class="frac-den">Rp</span></span> = <span class="frac"><span class="frac-num">1</span><span class="frac-den">6</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">3</span></span> = <span class="frac"><span class="frac-num">1</span><span class="frac-den">6</span></span> + <span class="frac"><span class="frac-num">2</span><span class="frac-den">6</span></span> = <span class="frac"><span class="frac-num">3</span><span class="frac-den">6</span></span></div>
+          <div class="jawaban-step">Rp = <span class="frac"><span class="frac-num">6</span><span class="frac-den">3</span></span> = <span class="cyan">2 Ω</span></div>
+          <div class="jawaban-title" style="margin-top: 8px">Langkah 2: Selesaikan Rangkaian Seri (Rt)</div>
+          <div class="jawaban-step">Rt = R1 + Rp</div>
+          <div class="jawaban-step">Rt = 4 Ω + 2 Ω</div>
+          <div class="jawaban-result">
+            R Total = <span class="cyan">6 Ohm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kesimpulan -->
+      <div class="section-card kesimpulan-card" style="--sd: 0.4s">
+        <div class="section-title">
+          <i data-feather="check-circle"></i> Catatan Karakteristik
+        </div>
+        <ul class="kesimpulan-list">
+          <li>Pada jalur <strong>seri</strong>, kuat arus utamanya akan sama.</li>
+          <li>Pada bagian percabangan <strong>paralel</strong>, arus akan terbagi (Hukum Kirchhoff).</li>
+          <li>Tegangan akan disipasi (drop) ketika melewati setiap resistor seri.</li>
+        </ul>
+      </div>
+
+      <!-- Navigasi bawah -->
+      <div class="nav-bottom">
+        <a href="materi-paralel.html" class="btn-nav btn-prev">
+          <i data-feather="arrow-left"></i> Rangkaian Paralel
+        </a>
+        <a href="materi-kirchhoff.html" class="btn-nav btn-next">
+          Hukum Kirchhoff <i data-feather="arrow-right"></i>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2025 Virtual Lab Elektro &nbsp;|&nbsp; Teknik Elektro
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../components/navbar.js"></script>
+    <script src="materi.js"></script>
+  </body>
+</html>
